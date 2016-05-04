@@ -50,9 +50,6 @@ RUN apt-get -yqq install php-pear && pear channel-update pear.php.net && pear up
 # Install PECL package manager
 RUN apt-get -yqq install libpcre3-dev
 
-# Install PECL uploadprogress extension
-RUN pecl install uploadprogress
-
 # Install memcached service
 RUN apt-get -yqq install memcached php-memcached
 
