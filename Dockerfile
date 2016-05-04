@@ -62,7 +62,7 @@ RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/lo
 # Install drush and drupal console (latest stables)
 USER docker
 RUN sudo composer global require drush/drush drupal/console
-RUN drupal init
+RUN $HOME/.composer/vendor/bin/drupal init
 USER root
 
 # Install PhpMyAdmin (latest version)
