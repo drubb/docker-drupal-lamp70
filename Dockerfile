@@ -6,7 +6,7 @@ MAINTAINER Boris Böhne <info@drubb.de>
 #
 
 # Build argument for debian frontend
-ARG DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Expose web root as volume
 VOLUME ["/var/www"]
