@@ -102,7 +102,7 @@ RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive t
 ADD config/httpd.conf /etc/apache2/conf-available/httpd.conf
 
 # Configure needed apache modules, disable default sites and enable custom site
-RUN a2enmod rewrite headers expires && a2dismod autoindex status && a2dissite 000-default && a2enconf httpd
+RUN a2enmod rewrite headers expires && a2dismod status && a2dissite 000-default && a2enconf httpd
 
 # Add additional php configuration file
 ADD config/php.ini /etc/php5/mods-available/php.ini
