@@ -105,8 +105,8 @@ ADD config/httpd.conf /etc/apache2/conf-available/httpd.conf
 RUN a2enmod rewrite headers expires && a2dismod status && a2dissite 000-default && a2enconf httpd
 
 # Add additional php configuration file
-ADD config/php.ini /etc/php5/mods-available/php.ini
-RUN php5enmod php
+ADD config/php.ini /etc/php/7.0/mods-available/php.ini
+RUN phpenmod php
 
 # Add additional mysql configuration file
 ADD config/mysql.cnf /etc/mysql/conf.d/mysql.cnf
