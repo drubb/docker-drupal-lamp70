@@ -42,7 +42,7 @@ RUN apt-get -yqq install mysql-server
 RUN service mysql start && service mysql stop && tar cpPzf /mysql.tar.gz /var/lib/mysql
 
 # Install PHP5 with Xdebug and other modules
-RUN apt-get -yqq install libapache2-mod-php php-mcrypt php-dev php-mysql php-curl php-gd php-intl php-xdebug
+RUN apt-get -yqq install libapache2-mod-php php-mcrypt php-dev php-mysql php-curl php-gd php-intl php-xdebug php-mbstring
 
 # Install PEAR package manager
 RUN apt-get -yqq install php-pear && pear channel-update pear.php.net && pear upgrade-all
@@ -64,7 +64,7 @@ RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/lo
 
 # Install drush and drupal console (latest stables)
 USER docker
-RUN composer global require drush/drush drupal/console
+RUN sudo composer global require drush/drush drupal/console
 USER root
 
 # Install PhpMyAdmin (latest version)
