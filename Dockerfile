@@ -33,7 +33,7 @@ RUN apt-get -yqq install openssh-client
 RUN apt-get -yqq install ssmtp
 
 # Install Apache web server
-RUN apt-get -yqq install apache2-mpm-prefork
+RUN apt-get -yqq install apache2
 
 # Install MySQL server and save initial configuration
 RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
