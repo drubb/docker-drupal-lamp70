@@ -11,8 +11,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Expose web root as volume
 VOLUME ["/var/www"]
 
-# Add additional repostories needed later
-RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" >> /etc/apt/sources.list
+# Add additional repositories needed later
+RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu xenial main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E1DF1F24
 
 # Update repositories cache and distribution
