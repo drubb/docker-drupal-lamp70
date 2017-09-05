@@ -65,9 +65,9 @@ RUN sudo composer global require drush/drush drupal/console
 RUN $HOME/.composer/vendor/bin/drupal init
 USER root
 
-# Install PhpMyAdmin (latest version)
-RUN wget -q -O phpmyadmin.zip https://github.com/phpmyadmin/phpmyadmin/archive/STABLE.zip && unzip -qq phpmyadmin.zip
-RUN rm phpmyadmin.zip && mv phpmyadmin-STABLE /opt/phpmyadmin
+# Install PhpMyAdmin (latest version not requiring Composer)
+RUN wget -q -O phpmyadmin.zip https://github.com/phpmyadmin/phpmyadmin/archive/RELEASE_4_6_6.zip && unzip -qq phpmyadmin.zip
+RUN rm phpmyadmin.zip && mv phpmyadmin-RELEASE_4_6_6 /opt/phpmyadmin
 
 # Install zsh / OH-MY-ZSH
 RUN apt-get -yqq install zsh && git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
